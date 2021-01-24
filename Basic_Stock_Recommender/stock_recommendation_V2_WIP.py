@@ -83,8 +83,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-#To do 1.21.21:
-    #1) Find a way to make out of range answers repeat the question.  IDEA: use a while loop
-    #2) Complete the Buy recommendation branch of the execute function
-    #3) Upload to Github so that I can try different methods to expand script
-    #4) Potential expansions: Add branch to execute function allowing to confirm trade before execution
+#To do:
+    #1) Potential expansions: Add branch to execute function allowing to confirm trade before execution
