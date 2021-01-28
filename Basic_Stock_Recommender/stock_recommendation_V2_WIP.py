@@ -79,11 +79,9 @@ def execute():
 
 #Call functions using main function
 
-def main():
-    execute()
 
 if __name__ == "__main__":
-    main()
+    execute()
 
 #To do:
     #1) Potential expansions: Add branch to execute function allowing to confirm trade before execution
