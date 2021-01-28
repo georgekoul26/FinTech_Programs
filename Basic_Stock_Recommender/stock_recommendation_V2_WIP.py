@@ -30,8 +30,9 @@ def recommend():
 def execute():
     recommendation, current_price, balance = recommend()
     if recommendation == "Sell":
-        shares_owned = int(input("Number of shares owned:")) 
-        while True:
+        shares_owned = int(input("Number of shares owned:"))
+        test_variable = True 
+        while test_variable:
             try: 
                 sell_order_quantitiy = int(input("How many shares do you want to sell?"))
             except ValueError:
@@ -45,16 +46,17 @@ def execute():
                 continue
             elif sell_order_quantitiy == 0:
                 print ("Confirmed.  You want to hold your position.")
-                break
+                test_variable = False
             else:
                 balance += sell_order_quantitiy * current_price
                 new_shares_owned = shares_owned - sell_order_quantitiy
                 print (f"Your new balance is ${balance}")
                 print (f"You now own {new_shares_owned} shares.")
-                break
+                test_variable = False
     if recommendation == "Buy":
         shares_owned = int(input("Number of shares owned:"))
-        while True:
+        test_variable = True
+        while test_variable:
             try:
                 buy_order_quantitiy = int(input("How many shares do you want to buy?"))
             except ValueError:
@@ -65,13 +67,13 @@ def execute():
                 continue
             elif buy_order_quantitiy == 0:
                 print ("Confirmed.  You do not want to buy any shares")
-                break
+                test_variable = False
             else:
                 balance -= buy_order_quantitiy * current_price
                 new_shares_owned = shares_owned + buy_order_quantitiy
                 print (f"Your new balance is ${balance}")
                 print (f"Your now own {new_shares_owned} shares.")
-                break
+                test_variable = False
     else: return
 
 
